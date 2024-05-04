@@ -1,0 +1,6 @@
+[submodule "front"]
+	path = front
+	url = https://github.com/lordofdestiny/pia-project-frontend.git
+[submodule "back"]
+	path = back
+	url = https://github.com/lordofdestiny/pia-project-backend.git
