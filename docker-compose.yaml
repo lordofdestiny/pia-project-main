@@ -1,0 +1,30 @@
+name: house-medica
+
+volumes:
+  db_cfg:
+  db_data:
+
+services:
+  mongo-db:
+    image: mongo:6
+    volumes:
+      - db_data:/data/db
+      - db_cfg:/data/configdb
+      - ./mongodb/pia-project-db:/home/pia-project-db
+    ports:
+      - 27017:27017
+  server:
+    depends_on:
+      - mongo-db
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: .env
+    environment:
+      PORT: 3000
+      NODE_ENV: production
+      MONGO_URI: "mongodb://mongo-db:27017/pia-project-db"
+    volumes:
+      - ./back/public/uploads:/app/public/uploads
+    ports:
+      - 3000:3000

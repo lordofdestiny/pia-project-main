@@ -1,0 +1,14 @@
+**/node_modules
+**/dist
+**/logs
+**/.vscode
+**/.angular
+**/*example.env
+**.env
+**/Dockerfile
+**/.dockerignore
+**/docker-compose.yml
+**/.gitignore
+**/README.md
+mongodb
+**/uploads
