@@ -25,7 +25,7 @@ COPY ./back .
 
 RUN npm run build
 
-FROM node:18-alpine
+FROM node:18
 
 RUN export SECRET_KEY=$(python3 -c 'import secrets; print(secrets.token_hex(32))')
 
